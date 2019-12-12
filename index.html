@@ -48,7 +48,7 @@
 
   <form class='delete-run'>
     <div class="form-group">
-      <input type="text" name="book[id]" placeholder="Delete Resource ID Here">
+      <input type="text" name="run[id]" placeholder="Delete Resource ID Here">
     </div>
     <button type="submit" class="btn btn-primary">Delete Run</button>
   </form>
@@ -66,10 +66,11 @@
 
   <form class='create-run'>
     <div class="form-group">
-      <input type="text" name="run[date]" placeholder="Date">
+      <input type="date" name="run[date]" placeholder="Date">
       <input type="text" name="run[distance]" placeholder="Distance">
       <input type="text" name="run[run_time]" placeholder="Time">
       <input type="text" name="run[place]" placeholder="Place">
+      <!-- <input type="text" name="run[user_id]" placeholder="User ID"> -->
     </div>
     <button type="submit" class="btn btn-primary">Create Run</button>
   </form>
