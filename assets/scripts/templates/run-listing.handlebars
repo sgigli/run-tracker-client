@@ -1,8 +1,8 @@
 {{#each runs as |run|}}
   {{log run}}
-  <section>
+  <section data-id={{run.id}}>
     <h5>Date: {{run.date}} Distance: {{run.distance}} Time: {{run.run_time}} Place: {{run.place}}</h5>
-
+    <button data-id={{run.id}} class="btn btn-danger">Delete Run</button>
   </section>
 
 {{/each}}

@@ -35,9 +35,9 @@ const update = (data) => {
   })
 }
 
-const destroy = (data) => {
+const destroy = (id) => {
   return $.ajax({
-    url: config.apiUrl + '/runs/' + data.run.id,
+    url: config.apiUrl + '/runs/' + id,
     method: 'DELETE',
     headers: {
       Authorization: `Token token=${store.user.token}`

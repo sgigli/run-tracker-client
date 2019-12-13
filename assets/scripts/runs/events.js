@@ -20,10 +20,12 @@ const onGetRuns = function (event) {
 const onDeleteRun = function (event) {
   event.preventDefault()
 
-  const data = getFormFields(event.target)
-  console.log(data)
-  runsApi.destroy(data)
-    .then(console.log)
+  const id = $(event.target).data('id')
+  console.log(id)
+  runsApi.destroy(id)
+    .then(function (data) {
+      onGetRuns(event)
+    })
     .catch(console.error)
 }
 
@@ -50,7 +52,7 @@ const addHandlers = () => {
   $('.get-runs').on('submit', onGetRuns)
   $('.create-run').on('submit', onCreateRun)
   $('.update-run').on('submit', onUpdateRun)
-  $('.delete-run').on('submit', onDeleteRun)
+  $('#message').on('click', '.btn-danger', onDeleteRun)
   // onDeleteRun()
   // onCreateRun()
   // onUpdateRun()
