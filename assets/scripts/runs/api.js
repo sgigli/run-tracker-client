@@ -24,9 +24,9 @@ const create = (data) => {
   })
 }
 
-const update = (data, form) => {
+const update = (data, id) => {
   return $.ajax({
-    url: config.apiUrl + '/runs/' + $(form).data('id'),
+    url: config.apiUrl + '/runs/' + id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`

@@ -24,8 +24,8 @@ const onSignInSuccess = responseData => {
   store.user = responseData.user
   // console.log(store)
   $('#message').text('You successfully signed in!')
-  // $('.after-auth').show()
-  // $('.before-auth').hide()
+  $('#after-auth').show()
+  $('#before-auth').hide()
 }
 
 const onSignInFailure = () => {
@@ -35,8 +35,8 @@ const onSignInFailure = () => {
 const onSignOutSuccess = () => {
   store.user = {}
   onSuccess('You successfully signed out!')
-  // $('.before-auth').show()
-  // $('.after-auth').hide()
+  $('#before-auth').show()
+  $('#after-auth').hide()
 }
 
 const onSignOutFailure = () => {

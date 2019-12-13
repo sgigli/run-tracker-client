@@ -14,66 +14,50 @@
 </head>
 
 <body>
-  <h1>Browser Template</h1>
+  <h1>Run Tracker</h1>
   <h2 id="message">---</h2>
-  <h2>Sign Up</h2>
-  <form id="sign-up">
-    <input name="credentials[email]" type="text" placeholder="email">
-    <input name="credentials[password]" type="password" placeholder="password">
-    <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
-    <button class="btn btn-primary">Submit</button>
-  </form>
-  <h2>Sign In</h2>
-  <form id="sign-in">
-    <input name="credentials[email]" type="text" placeholder="email">
-    <input name="credentials[password]" type="password" placeholder="password">
-    <button class="btn btn-primary">Submit</button>
-  </form>
-  <span>Change Password</span>
-  <form id="change-password">
-    <input type="password" name="passwords[old]" placeholder="old password">
-    <input type="password" name="passwords[new]" placeholder="new password">
-    <button class="btn btn-primary">Submit</button>
-  </form>
-  <form id="sign-out">
-    <button class="btn btn-primary">Sign Out</button>
-  </form>
+  <section id='before-auth'>
+    <h2>Sign Up</h2>
+    <form id="sign-up">
+      <input name="credentials[email]" type="text" placeholder="email">
+      <input name="credentials[password]" type="password" placeholder="password">
+      <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+      <button class="btn btn-primary">Submit</button>
+    </form>
+    <h2>Sign In</h2>
+    <form id="sign-in">
+      <input name="credentials[email]" type="text" placeholder="email">
+      <input name="credentials[password]" type="password" placeholder="password">
+      <button class="btn btn-primary">Submit</button>
+    </form>
+  </section>
+  <section id='after-auth'>
+    <span>Change Password</span>
+    <form id="change-password">
+      <input type="password" name="passwords[old]" placeholder="old password">
+      <input type="password" name="passwords[new]" placeholder="new password">
+      <button class="btn btn-primary">Submit</button>
+    </form>
+    <form id="sign-out">
+      <button class="btn btn-primary">Sign Out</button>
+    </form>
 
-  <form class='get-runs'>
-    <!-- <div class="form-group">
-      <input type="text" name="run[id]" id="run-id" placeholder="ID">
-    </div> -->
-    <button type="submit" class="btn btn-primary">Get Runs</button>
-  </form>
 
-  <!-- <form class='delete-run'>
-    <div class="form-group">
-      <input type="text" name="run[id]" placeholder="Delete Resource ID Here">
-    </div>
-    <button type="submit" class="btn btn-primary">Delete Run</button>
-  </form> -->
+    <form class='get-runs'>
+      <button type="submit" class="btn btn-primary">Get Runs</button>
+    </form>
 
-  <!-- <form class='update-run'>
-    <div class="form-group">
-      <input type="text" name="run[id]" placeholder="ID">
-      <input type="text" name="run[date]" placeholder="Date">
-      <input type="text" name="run[distance]" placeholder="Distance">
-      <input type="text" name="run[run_time]" placeholder="Time">
-      <input type="text" name="run[place]" placeholder="Place">
-    </div>
-    <button type="submit" class="btn btn-primary">Update Run</button>
-  </form> -->
 
-  <form class='create-run'>
-    <div class="form-group">
-      <input type="date" name="run[date]" placeholder="Date">
-      <input type="text" name="run[distance]" placeholder="Distance">
-      <input type="text" name="run[run_time]" placeholder="Time">
-      <input type="text" name="run[place]" placeholder="Place">
-      <!-- <input type="text" name="run[user_id]" placeholder="User ID"> -->
-    </div>
-    <button type="submit" class="btn btn-primary">Create Run</button>
-  </form>
+    <form class='create-run'>
+      <div class="form-group">
+        <input type="date" name="run[date]" placeholder="Date">
+        <input type="text" name="run[distance]" placeholder="Distance">
+        <input type="text" name="run[run_time]" placeholder="Time">
+        <input type="text" name="run[place]" placeholder="Place">
+      </div>
+      <button type="submit" class="btn btn-primary">Create Run</button>
+    </form>
+  </section>
 </body>
 
 </html>

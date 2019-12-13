@@ -2,13 +2,8 @@
 
 const runsApi = require('./api.js')
 const getFormFields = require('../../../lib/get-form-fields')
-const runsUi = require('./ui.js');
+const runsUi = require('./ui.js')
 
-// get in the habit of naming your handlers, it eases debugging.
-//
-// also, follow a convention for handlers. here, I name my handler
-// beginning with 'on' to denote that it is done when the GET /books
-// button is clicked
 const onGetRuns = function (event) {
   event.preventDefault()
 
@@ -33,9 +28,10 @@ const onUpdateRun = function (event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
+  const id = $(event.target).data('id')
   console.log(data)
-  runsApi.update(data, event.target)
-    .then(function (data) {
+  runsApi.update(data, id)
+    .then(function () {
       onGetRuns(event)
     })
     .catch(console.error)
@@ -55,9 +51,6 @@ const addHandlers = () => {
   $('.create-run').on('submit', onCreateRun)
   $('#message').on('submit', '.update-run', onUpdateRun)
   $('#message').on('click', '.btn-danger', onDeleteRun)
-  // onDeleteRun()
-  // onCreateRun()
-  // onUpdateRun()
 }
 
 module.exports = {
