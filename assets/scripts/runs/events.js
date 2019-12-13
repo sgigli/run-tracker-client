@@ -34,8 +34,10 @@ const onUpdateRun = function (event) {
 
   const data = getFormFields(event.target)
   console.log(data)
-  runsApi.update(data)
-    .then(console.log)
+  runsApi.update(data, event.target)
+    .then(function (data) {
+      onGetRuns(event)
+    })
     .catch(console.error)
 }
 
@@ -51,7 +53,7 @@ const onCreateRun = function (event) {
 const addHandlers = () => {
   $('.get-runs').on('submit', onGetRuns)
   $('.create-run').on('submit', onCreateRun)
-  $('.update-run').on('submit', onUpdateRun)
+  $('#message').on('submit', '.update-run', onUpdateRun)
   $('#message').on('click', '.btn-danger', onDeleteRun)
   // onDeleteRun()
   // onCreateRun()

@@ -3,6 +3,17 @@
   <section data-id={{run.id}}>
     <h5>Date: {{run.date}} Distance: {{run.distance}} Time: {{run.run_time}} Place: {{run.place}}</h5>
     <button data-id={{run.id}} class="btn btn-danger">Delete Run</button>
+    <form data-id={{run.id}} class='update-run'>
+      <div class="form-group">
+        <!-- <input type="text" name="run[id]" placeholder="ID"> -->
+        <!-- <input type="hidden" value={{run.id}}> -->
+        <input type="text" name="run[date]" placeholder="Date">
+        <input type="text" name="run[distance]" placeholder="Distance">
+        <input type="text" name="run[run_time]" placeholder="Time">
+        <input type="text" name="run[place]" placeholder="Place">
+      </div>
+      <button type="submit" class="btn btn-primary">Update Run</button>
+    </form>
   </section>
 
 {{/each}}
