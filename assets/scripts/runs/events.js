@@ -3,6 +3,7 @@
 const runsApi = require('./api.js')
 const getFormFields = require('../../../lib/get-form-fields')
 const runsUi = require('./ui.js')
+// const runsChart = require('./chart')
 
 const onGetRuns = function (event) {
   event.preventDefault()
@@ -46,11 +47,25 @@ const onCreateRun = function (event) {
     .catch(console.error)
 }
 
+const onGetChart = (event) => {
+  runsApi.index()
+    .then(runsUi.drawChart)
+  // console.log(data.runs)
+}
+
+// const onDisplayChart = () => {
+//   const data = onGetRuns()
+//
+// }
+
 const addHandlers = () => {
   $('.get-runs').on('submit', onGetRuns)
   $('.create-run').on('submit', onCreateRun)
   $('#message').on('submit', '.update-run', onUpdateRun)
   $('#message').on('click', '.btn-danger', onDeleteRun)
+  $('.chart').on('click', onGetChart)
+  // runsChart.drawChart()
+  // $('#message').on('click', '.chart', onDisplayChart)
 }
 
 module.exports = {

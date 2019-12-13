@@ -17,21 +17,23 @@
   <h1>Run Tracker</h1>
   <h2 id="message">---</h2>
   <section id='before-auth'>
-    <h2>Sign Up</h2>
+    <canvas id="myChart1" width="400" height="150"></canvas>
+    <!-- <h2>Sign Up</h2> -->
     <form id="sign-up">
       <input name="credentials[email]" type="text" placeholder="email">
       <input name="credentials[password]" type="password" placeholder="password">
       <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
-      <button class="btn btn-primary">Submit</button>
+      <button class="btn btn-primary">Sign Up</button>
     </form>
-    <h2>Sign In</h2>
+    <!-- <h2>Sign In</h2> -->
     <form id="sign-in">
       <input name="credentials[email]" type="text" placeholder="email">
       <input name="credentials[password]" type="password" placeholder="password">
-      <button class="btn btn-primary">Submit</button>
+      <button class="btn btn-primary">Sign In</button>
     </form>
   </section>
   <section id='after-auth'>
+    <canvas id="myChart2" width="400" height="150"></canvas>
     <span>Change Password</span>
     <form id="change-password">
       <input type="password" name="passwords[old]" placeholder="old password">
@@ -49,14 +51,16 @@
 
 
     <form class='create-run'>
-      <div class="form-group">
-        <input type="date" name="run[date]" placeholder="Date">
-        <input type="text" name="run[distance]" placeholder="Distance">
-        <input type="text" name="run[run_time]" placeholder="Time">
-        <input type="text" name="run[place]" placeholder="Place">
-      </div>
-      <button type="submit" class="btn btn-primary">Create Run</button>
+        <div class="form-group">
+          <input type="date" name="run[date]" placeholder="Date">
+          <input type="text" name="run[distance]" placeholder="Distance">
+          <input type="text" name="run[run_time]" placeholder="Time">
+          <input type="text" name="run[place]" placeholder="Place">
+        </div>
+        <button type="submit" class="btn btn-primary">Create Run</button>
     </form>
+
+    <button class="chart btn btn-primary">Get Chart</button>
   </section>
 </body>
 
