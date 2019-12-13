@@ -2,7 +2,7 @@
 
 const runsApi = require('./api.js')
 const getFormFields = require('../../../lib/get-form-fields')
-// const runsUi = require('./ui.js');
+const runsUi = require('./ui.js');
 
 // get in the habit of naming your handlers, it eases debugging.
 //
@@ -13,7 +13,7 @@ const onGetRuns = function (event) {
   event.preventDefault()
 
   runsApi.index()
-    .then(console.log)
+    .then(runsUi.getRunsSuccess)
     .catch(console.error)
 }
 
