@@ -1,12 +1,20 @@
 'use strict'
 
 const showRunsTemplate = require('../templates/run-listing.handlebars')
+const showRunTemplate = require('../templates/get-run.handlebars')
 const runsChart = require('./chart')
+const runsApi = require('../runs/api')
 
 const getRunsSuccess = data => {
   console.log(data)
   const showRunsHtml = showRunsTemplate({runs: data.runs})
   $('#message').html(showRunsHtml)
+}
+
+const getRunSuccess = data => {
+  console.log(data)
+  const showRunHtml = showRunTemplate({run: data.run})
+  $('#message').html(showRunHtml)
 }
 
 const drawChart = (data) => {
@@ -26,5 +34,6 @@ const drawChart = (data) => {
 
 module.exports = {
   getRunsSuccess,
+  getRunSuccess,
   drawChart
 }

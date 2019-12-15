@@ -53,6 +53,33 @@ const onGetChart = (event) => {
   // console.log(data.runs)
 }
 
+const onGetRun = (event) => {
+  event.preventDefault()
+
+  const data = getFormFields(event.target)
+  const date = data.run.date
+
+  // runsApi.show(date)
+  //   .then(console.log)
+  // const result = runsApi.index()
+  // console.log(result)
+  // console.log(result[responseJSON])
+  // console.log(result.runs)
+  // runsUi.getRunSuccess(date)
+
+  runsApi.index()
+    .then(function (res) {
+      console.log(res.runs)
+      const run = res.runs.find(ele => ele.date === date)
+      console.log(run)
+      const id = run.id
+      console.log(id)
+      runsApi.show(id)
+        .then(runsUi.getRunSuccess)
+    })
+    .catch(console.error)
+}
+
 // const onDisplayChart = () => {
 //   const data = onGetRuns()
 //
@@ -64,6 +91,7 @@ const addHandlers = () => {
   $('#message').on('submit', '.update-run', onUpdateRun)
   $('#message').on('click', '.btn-danger', onDeleteRun)
   $('.chart').on('click', onGetChart)
+  $('.get-run').on('submit', onGetRun)
   // runsChart.drawChart()
   // $('#message').on('click', '.chart', onDisplayChart)
 }

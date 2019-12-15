@@ -45,9 +45,20 @@ const destroy = (id) => {
   })
 }
 
+const show = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/runs/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
+
 module.exports = {
   index,
   create,
   update,
-  destroy
+  destroy,
+  show
 }
