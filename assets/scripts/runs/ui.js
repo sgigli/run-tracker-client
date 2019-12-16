@@ -28,11 +28,8 @@ const drawChart = (data) => {
     console.log(parseInt(ele.distance))
   })
   console.log($('#myChart2'))
-  // $('#myChart2').classList.toggle('canvas')
   runsChart.drawChart(distance, dates)
   $('#myChart2').css('background-color', 'white')
-  // $('canvas')[0].style.backgroundColor = 'white'
-  // document.getElementById('#myChart2').style.backgroundColor = 'white'
 }
 
 module.exports = {
