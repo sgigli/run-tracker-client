@@ -88,8 +88,8 @@ const onGetRun = (event) => {
 const addHandlers = () => {
   $('.get-runs').on('submit', onGetRuns)
   $('.create-run').on('submit', onCreateRun)
-  $('#message').on('submit', '.update-run', onUpdateRun)
-  $('#message').on('click', '.btn-danger', onDeleteRun)
+  $('#output').on('submit', '.update-run', onUpdateRun)
+  $('#output').on('click', '.btn-danger', onDeleteRun)
   $('.chart').on('click', onGetChart)
   $('.get-run').on('submit', onGetRun)
   // runsChart.drawChart()

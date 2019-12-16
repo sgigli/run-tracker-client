@@ -3,18 +3,17 @@
 const showRunsTemplate = require('../templates/run-listing.handlebars')
 const showRunTemplate = require('../templates/get-run.handlebars')
 const runsChart = require('./chart')
-const runsApi = require('../runs/api')
 
 const getRunsSuccess = data => {
   console.log(data)
   const showRunsHtml = showRunsTemplate({runs: data.runs})
-  $('#message').html(showRunsHtml)
+  $('#output').html(showRunsHtml)
 }
 
 const getRunSuccess = data => {
   console.log(data)
   const showRunHtml = showRunTemplate({run: data.run})
-  $('#message').html(showRunHtml)
+  $('#output').html(showRunHtml)
 }
 
 const drawChart = (data) => {
@@ -28,8 +27,12 @@ const drawChart = (data) => {
     console.log(ele.date)
     console.log(parseInt(ele.distance))
   })
-  console.log(dates)
+  console.log($('#myChart2'))
+  // $('#myChart2').classList.toggle('canvas')
   runsChart.drawChart(distance, dates)
+  $('#myChart2').css('background-color', 'white')
+  // $('canvas')[0].style.backgroundColor = 'white'
+  // document.getElementById('#myChart2').style.backgroundColor = 'white'
 }
 
 module.exports = {

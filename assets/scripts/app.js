@@ -12,5 +12,6 @@ const runsChart = require('./auth/chart')
 $(() => {
   authEvents.addHandlers()
   runsEvents.addHandlers()
-  runsChart.drawChart([2, 4, 6, 8, 10, 12])
+  $('#myChart2').toggleClass('#myChart2')
+  // runsChart.drawChart([2, 4, 6, 8, 10, 12])
 })

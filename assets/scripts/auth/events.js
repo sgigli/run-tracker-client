@@ -42,11 +42,20 @@ const onChangePassword = event => {
     .catch(ui.onChangePasswordFailure)
 }
 
+const onShowChangePW = (event) => {
+  event.preventDefault()
+  console.log('check')
+
+  $('#change-password').show()
+  $('.show-change-PW').hide()
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  $('.show-change-PW').on('click', onShowChangePW)
 }
 
 module.exports = {

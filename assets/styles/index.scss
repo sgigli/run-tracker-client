@@ -3,14 +3,75 @@
 body {
   margin-top: 40px;
   text-align: center;
-  background-color: #cce6ff;
+  // background-color: #cce6ff;
+  background-image: url('https://hikeoftheweek.com/new/wp-content/uploads/2012/09/DSC03319.jpg')
 }
 
-#before-auth {
+.before-auth {
   // background-color: #ffcc80;
 }
 
-#after-auth {
+.after-auth {
   // background-color: #b3ffb3;
   display: none;
 }
+
+#change-password {
+  display: none;
+  // text-align: right;
+}
+
+#sign-out {
+  display: inline-block;
+}
+
+.row.no-gutter {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.row.no-gutter > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#create-run-button {
+  display: inline-block;
+}
+
+#block {
+  display: block;
+}
+
+.buffer {
+  height: 100px;
+}
+
+.box {
+  border-radius: 10px;
+  // background-color: #b3ffff
+;
+  // margin: 50px;
+  // padding: 50px 100px 50px 100px;
+}
+
+.get-runs {
+  padding: 20px;
+}
+
+.get-runs {
+  padding: 20px 100px;
+}
+
+input {
+  border: 2px solid black;
+  // margin: 20px;
+}
+
+.chart {
+  padding-bottom: 10px;
+}
+
+// #myChart2 {
+//   background-color: white;
+// }
