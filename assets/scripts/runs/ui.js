@@ -29,7 +29,7 @@ const drawChart = (data) => {
   })
   console.log($('#myChart2'))
   runsChart.drawChart(distance, dates)
-  $('#myChart2').css('background-color', 'white')
+  $('#myChart2').addClass('chart-background')
 }
 
 module.exports = {

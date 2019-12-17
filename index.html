@@ -54,9 +54,9 @@
       </div>
       <div class="col-5 text-right after-auth">
         <form id="change-password">
-            <input type="password" name="passwords[old]" placeholder="old password">
-            <input type="password" name="passwords[new]" placeholder="new password">
-            <button class="btn btn-primary">Submit</button>
+          <input type="password" name="passwords[old]" placeholder="old password">
+          <input type="password" name="passwords[new]" placeholder="new password">
+          <button class="btn btn-primary">Submit</button>
         </form>
         <button class="btn btn-primary show-change-PW">Change Password</button>
       </div>
@@ -87,34 +87,36 @@
       </div>
 
       <div class="row">
-        <div class="col-3 box">
-          <form class='get-runs'>
-            <button type="submit" class="btn btn-primary">Get Runs</button>
-          </form>
+        <div class="col-3">
+          <section class='box'>
+            <form class='get-runs'>
+              <button type="submit" class="btn btn-primary">Get Runs</button>
+            </form>
 
-          <form class='get-run'>
-            <input type="text" name="run[date]" placeholder="Date">
-            <button type="submit" class="btn btn-primary">Get Run</button>
-          </form>
+            <form class='get-run'>
+              <input type="text" name="run[date]" placeholder="Date">
+              <button type="submit" class="btn btn-primary">Get Run</button>
+            </form>
 
 
-          <form class='create-run'>
-            <div class="form-group">
-              <input type="date" name="run[date]" placeholder="Date">
-              <input type="text" name="run[distance]" placeholder="Distance">
-              <section id='block'>
-                <input type="text" name="run[run_time]" placeholder="Time">
-                <input type="text" name="run[place]" placeholder="Place">
-              </section>
-              <button type="submit" class="btn btn-primary create-run-button">Create Run</button>
-            </div>
-            <!-- <button type="submit" class="btn btn-primary create-run-button">Create Run</button> -->
-          </form>
-          <!-- <form id="create-run-button">
+            <form class='create-run'>
+              <div class="form-group">
+                <input type="date" name="run[date]" placeholder="Date">
+                <input type="text" name="run[distance]" placeholder="Distance">
+                <section id='block'>
+                  <input type="text" name="run[run_time]" placeholder="Time">
+                  <input type="text" name="run[place]" placeholder="Place">
+                </section>
+                <button type="submit" class="btn btn-primary create-run-button">Create Run</button>
+              </div>
+              <!-- <button type="submit" class="btn btn-primary create-run-button">Create Run</button> -->
+            </form>
+            <!-- <form id="create-run-button">
             <button type="submit" class="btn btn-primary">Create Run</button>
           </form> -->
 
-          <button class="chart btn btn-primary">Get Chart</button>
+            <button class="chart btn btn-primary">Get Chart</button>
+          </section>
         </div>
         <div class="col-9">
           <div id="output"></div>
