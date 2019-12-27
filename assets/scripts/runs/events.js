@@ -15,9 +15,7 @@ const onGetRuns = function (event) {
 
 const onDeleteRun = function (event) {
   event.preventDefault()
-
-  const id = $(event.target).data('id')
-  console.log(id)
+  const id = $(event.target).parents('.delete-button').data('id')
   runsApi.destroy(id)
     .then(function (data) {
       onGetRuns(event)
@@ -43,7 +41,7 @@ const onCreateRun = function (event) {
 
   const data = getFormFields(event.target)
   runsApi.create(data)
-    .then(console.log)
+    .then(runsUi.createRunSuccess)
     .catch(console.error)
 }
 
@@ -59,14 +57,6 @@ const onGetRun = (event) => {
   const data = getFormFields(event.target)
   const date = data.run.date
 
-  // runsApi.show(date)
-  //   .then(console.log)
-  // const result = runsApi.index()
-  // console.log(result)
-  // console.log(result[responseJSON])
-  // console.log(result.runs)
-  // runsUi.getRunSuccess(date)
-
   runsApi.index()
     .then(function (res) {
       console.log(res.runs)
@@ -80,6 +70,12 @@ const onGetRun = (event) => {
     .catch(console.error)
 }
 
+const onShowUpdateFields = (event) => {
+  event.preventDefault()
+  const id = $(event.target).parents('.edit-button').data('id')
+  console.log(id)
+  runsUi.showUpdateFields(id)
+}
 // const onDisplayChart = () => {
 //   const data = onGetRuns()
 //
@@ -88,8 +84,9 @@ const onGetRun = (event) => {
 const addHandlers = () => {
   $('.get-runs').on('submit', onGetRuns)
   $('.create-run').on('submit', onCreateRun)
-  $('#output').on('submit', '.update-run', onUpdateRun)
-  $('#output').on('click', '.btn-danger', onDeleteRun)
+  $('#output').on('click', '.edit-button', onShowUpdateFields)
+  $('#output').on('submit', '.update', onUpdateRun)
+  $('#output').on('click', '.delete-button', onDeleteRun)
   $('.chart').on('click', onGetChart)
   $('.get-run').on('submit', onGetRun)
   // runsChart.drawChart()
