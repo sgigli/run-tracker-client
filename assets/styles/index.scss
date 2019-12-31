@@ -8,7 +8,23 @@ body {
 }
 
 .before-auth {
-  // background-color: #ffcc80;
+  .before-auth-top {
+    opacity: 0;
+  }
+}
+
+.before-auth-inner {
+  background-color: #b3ffff;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 2px 3px 10px;
+  height: 385px;
+  width: 300px;
+  padding: 10px;
+  input {
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 .after-auth {
@@ -16,11 +32,18 @@ body {
   display: none;
 }
 
+#sign-up {
+  margin: 40px;
+}
+
 #change-password {
   //display: none;
   // text-align: right;
   display: inline-block;
   // text-align: right;
+  input {
+    display: inline;
+  }
 }
 
 .hide {
@@ -30,11 +53,17 @@ body {
 nav {
   text-align: right;
   margin-right: 30px;
-  margin-top: 30px
+  margin-top: 10px;
+  line-height: 50px;
+  input {
+    line-height: 25px;
+    // display: inline-block;
+  }
 }
 
 #sign-out {
   display: inline-block;
+  margin-right: 10px;
 }
 
 .row.no-gutter {
@@ -82,6 +111,8 @@ input {
   border: 2px solid black;
   box-shadow: 1px 1px 1px;
   border-radius: 2px;
+  display: block;
+  margin: 0 auto;
   // margin: 20px;
 }
 
@@ -127,4 +158,16 @@ button {
 
 .buffer2 {
   padding: 34px;
+}
+
+.after-settings-click {
+  display: none;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+#enclose {
+  display: inline-block;
 }

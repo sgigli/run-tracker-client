@@ -76,10 +76,14 @@ const onShowUpdateFields = (event) => {
   console.log(id)
   runsUi.showUpdateFields(id)
 }
-// const onDisplayChart = () => {
-//   const data = onGetRuns()
-//
-// }
+
+const onShowSettings = (event) => {
+  event.preventDefault()
+  $('.after-settings-click').toggle()
+
+  // $('#enclose').addClass('white-background')
+  // $('.after-settings-click').addClass('white-background')
+}
 
 const addHandlers = () => {
   $('.get-runs').on('submit', onGetRuns)
@@ -89,6 +93,7 @@ const addHandlers = () => {
   $('#output').on('click', '.delete-button', onDeleteRun)
   $('.chart').on('click', onGetChart)
   $('.get-run').on('submit', onGetRun)
+  $('.before-settings-click').on('click', onShowSettings)
   // runsChart.drawChart()
   // $('#message').on('click', '.chart', onDisplayChart)
 }

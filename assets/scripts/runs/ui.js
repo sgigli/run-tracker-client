@@ -8,6 +8,7 @@ const eva = require('eva-icons')
 
 const createRunSuccess = () => {
   $('#message').html('Run logged!')
+  $('form').trigger('reset')
 }
 
 const getRunsSuccess = data => {
@@ -23,6 +24,7 @@ const getRunSuccess = data => {
   console.log(data)
   const showRunHtml = showRunTemplate({run: data.run})
   $('#message').empty()
+  $('form').trigger('reset')
   $('#output').html(showRunHtml)
   eva.replace()
 }
