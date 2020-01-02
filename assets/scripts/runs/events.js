@@ -90,8 +90,6 @@ const addHandlers = () => {
   $('.chart').on('click', onGetChart)
   $('.get-run').on('submit', onGetRun)
   $('.before-settings-click').on('click', onShowSettings)
-  // runsChart.drawChart()
-  // $('#message').on('click', '.chart', onDisplayChart)
 }
 
 module.exports = {
