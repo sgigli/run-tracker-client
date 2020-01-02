@@ -1,13 +1,11 @@
 
 
 {{#each runs as |run|}}
-  {{log run}}
   <section data-id={{run.id}} class='white-background'>
     <h5>Date: {{run.date}} Distance: {{run.distance}} Time: {{run.run_time}} Place: {{run.place}}
       <i data-eva="edit-2-outline" data-eva-fill="#33cc33" data-id={{run.id}} class='edit-button'></i>
       <i data-eva="trash-2-outline" data-eva-fill="#ff0000" data-id={{run.id}} class='delete-button'></i>
     </h5>
-    <!-- <button data-id={{run.id}} class="btn btn-danger">Delete Run</button> -->
     <form data-id={{run.id}} class='update-run update'>
       <div class="form-group">
         <input type="date" name="run[date]" placeholder="Date">
