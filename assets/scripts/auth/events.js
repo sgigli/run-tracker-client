@@ -44,16 +44,17 @@ const onChangePassword = event => {
 
 const onShowChangePW = (event) => {
   event.preventDefault()
-  console.log('check')
 
-  $('#change-password').show()
+  // $('#change-password').removeClass('hide')
+  // $('#change-password').show()
+  $('.hide').show()
   $('.show-change-PW').hide()
 }
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
-  $('#sign-out').on('submit', onSignOut)
+  $('#sign-out').on('click', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('.show-change-PW').on('click', onShowChangePW)
 }

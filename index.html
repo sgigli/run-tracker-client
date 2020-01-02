@@ -2,157 +2,123 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>Run Tracker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
 
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="https://unpkg.com/eva-icons"></script>
 </head>
 
 <body>
-  <!-- <nav>
-    <button class="btn btn-primary">Sign Out</button>
-    <form id="change-password">
-        <input type="password" name="passwords[old]" placeholder="old password">
-        <input type="password" name="passwords[new]" placeholder="new password">
-        <button class="btn btn-primary">Submit</button>
-    </form>
-    <button class="btn btn-primary show-change-PW">Change Password</button>
-  </nav> -->
+  <nav>
+    <section class='before-auth'>
+      <div class='before-auth-top'>
+        ---
+      </div>
+    </section>
+    <section class='after-auth'>
+      <div id='enclose'>
+        <section class="inline-block">
+          <section class="after-settings-click">
+            <form id="change-password">
+              <section class='hide'>
+                <input type="password" name="passwords[old]" placeholder="old password">
+                <input type="password" name="passwords[new]" placeholder="new password">
+                <button class="btn btn-primary">Submit</button>
+              </section>
+            </form>
+            <button class="btn btn-primary show-change-PW">Change Password</button>
+            <button id='sign-out' class="btn btn-danger sign-out">Sign Out</button>
+          </section>
+        </section>
+        <i data-eva="settings-outline" class='before-settings-click white-background'></i>
+      </div>
+    </section>
+
+  </nav>
+
   <div class="container">
+    <div class="row">
+      <!-- <div class="buffer2"></div> -->
+    </div>
     <div class="row row-no-gutters">
       <div class="col-4 text-left">
         <h4 id="message"></h4>
       </div>
-      <div class="col-4">
+      <div id='title' class="col-6">
         <h1>Run Tracker</h1>
       </div>
-      <div class="col-4 text-right after-auth">
-        <!-- <form id="change-password">
-          <section id='hide-change-PW'>
-            <input type="password" name="passwords[old]" placeholder="old password">
-            <input type="password" name="passwords[new]" placeholder="new password">
-            <button class="btn btn-primary">Submit</button>
-          </section>
-        </form>
-        <button class="btn btn-primary show-change-PW">Change Password</button> -->
-        <form id="sign-out">
-          <button class="btn btn-primary">Sign Out</button>
-        </form>
-      </div>
     </div>
-  </div>
-  <div class="container">
     <div class="row">
-      <div class="col-5">
-      </div>
-      <div class="col-2">
-      </div>
-      <div class="col-5 text-right after-auth">
-        <form id="change-password">
-            <input type="password" name="passwords[old]" placeholder="old password">
-            <input type="password" name="passwords[new]" placeholder="new password">
-            <button class="btn btn-primary">Submit</button>
-        </form>
-        <button class="btn btn-primary show-change-PW">Change Password</button>
-      </div>
+      <div class="buffer2"></div>
     </div>
   </div>
-  <!-- <h1>Run Tracker</h1> -->
-  <!-- <h2 id="message">---</h2> -->
   <section class='before-auth'>
-    <canvas id="myChart1" width="400" height="150"></canvas>
-    <!-- <h2>Sign Up</h2> -->
-    <form id="sign-up">
-      <input name="credentials[email]" type="text" placeholder="email">
-      <input name="credentials[password]" type="password" placeholder="password">
-      <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
-      <button class="btn btn-primary">Sign Up</button>
-    </form>
-    <!-- <h2>Sign In</h2> -->
-    <form id="sign-in">
-      <input name="credentials[email]" type="text" placeholder="email">
-      <input name="credentials[password]" type="password" placeholder="password">
-      <button class="btn btn-primary">Sign In</button>
-    </form>
+    <!-- <canvas id="myChart1" width="400" height="150"></canvas> -->
+    <section class='before-auth-inner'>
+      <form id="sign-up">
+        <input name="credentials[email]" type="text" placeholder="email">
+        <input name="credentials[password]" type="password" placeholder="password">
+        <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+        <button class="btn btn-primary">Sign Up</button>
+      </form>
+      <form id="sign-in">
+        <input name="credentials[email]" type="text" placeholder="email">
+        <input name="credentials[password]" type="password" placeholder="password">
+        <button class="btn btn-primary">Sign In</button>
+      </form>
+    </section>
   </section>
   <section class='after-auth'>
     <div class="container">
       <div class="row">
-        <div class="buffer"></div>
+        <!-- <div class="buffer"></div> -->
       </div>
 
       <div class="row">
-        <div class="col-3 box">
-          <form class='get-runs'>
-            <button type="submit" class="btn btn-primary">Get Runs</button>
-          </form>
+        <div class="col-3">
+          <section class='box'>
+            <form class='create-run'>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary create-run-button">Log Run</button>
+                <input type="date" name="run[date]" placeholder="Date">
+                <input type="text" name="run[distance]" placeholder="Distance">
+                <section id='block'>
+                  <input type="text" name="run[run_time]" placeholder="Time">
+                  <input type="text" name="run[place]" placeholder="Place">
+                </section>
+                <!-- <button type="submit" class="btn btn-primary create-run-button">Create Run</button> -->
+              </div>
+            </form>
 
-          <form class='get-run'>
-            <input type="text" name="run[date]" placeholder="Date">
-            <button type="submit" class="btn btn-primary">Get Run</button>
-          </form>
+            <form class='get-runs'>
+              <button type="submit" class="btn btn-primary">See All Runs</button>
+            </form>
 
+            <form class='get-run'>
+              <button type="submit" class="btn btn-primary">Search</button>
+              <input type="text" name="run[date]" placeholder="Date">
+            </form>
 
-          <form class='create-run'>
-            <div class="form-group">
-              <input type="date" name="run[date]" placeholder="Date">
-              <input type="text" name="run[distance]" placeholder="Distance">
-              <section id='block'>
-                <input type="text" name="run[run_time]" placeholder="Time">
-                <input type="text" name="run[place]" placeholder="Place">
-              </section>
-              <button type="submit" class="btn btn-primary create-run-button">Create Run</button>
-            </div>
-            <!-- <button type="submit" class="btn btn-primary create-run-button">Create Run</button> -->
-          </form>
-          <!-- <form id="create-run-button">
-            <button type="submit" class="btn btn-primary">Create Run</button>
-          </form> -->
-
-          <button class="chart btn btn-primary">Get Chart</button>
+            <button class="chart btn btn-primary">See Chart</button>
+          </section>
         </div>
         <div class="col-9">
           <div id="output"></div>
-          <canvas id="myChart2" width="400" height="150"></canvas>
+          <!-- <canvas id="myChart2" width="400" height="150"></canvas> -->
         </div>
       </div>
     </div>
-    <!-- <canvas id="myChart2" width="400" height="150"></canvas> -->
-
-
-    <!-- <form class='get-runs'>
-      <button type="submit" class="btn btn-primary">Get Runs</button>
-    </form>
-
-    <form class='get-run'>
-      <input type="text" name="run[date]" placeholder="Date">
-      <button type="submit" class="btn btn-primary">Get Run</button>
-    </form>
-
-
-    <form class='create-run'>
-      <div class="form-group">
-        <input type="date" name="run[date]" placeholder="Date">
-        <input type="text" name="run[distance]" placeholder="Distance">
-        <section id='block'>
-          <input type="text" name="run[run_time]" placeholder="Time">
-          <input type="text" name="run[place]" placeholder="Place">
-        </section>
-        <button type="submit" class="btn btn-primary create-run-button">Create Run</button>
-      </div>
-      <!-- <button type="submit" class="btn btn-primary create-run-button">Create Run</button> -->
-    <!-- </form> -->
-    <!-- <form id="create-run-button">
-      <button type="submit" class="btn btn-primary">Create Run</button>
-    </form> -->
-
-    <!-- <button class="chart btn btn-primary">Get Chart</button> -->
   </section>
+  <script>
+    eva.replace()
+  </script>
 </body>
 
 </html>

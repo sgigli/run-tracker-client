@@ -8,7 +8,7 @@ const drawChart = (data, labels) => {
     data: {
       labels: labels,
       datasets: [{
-        label: '# of Votes',
+        label: '# of Miles',
         data: data,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',

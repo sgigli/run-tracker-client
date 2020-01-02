@@ -22,7 +22,6 @@ const onSignUpFailure = () => {
 
 const onSignInSuccess = responseData => {
   store.user = responseData.user
-  // console.log(store)
   $('#message').text('You successfully signed in!')
   $('.after-auth').show()
   $('.before-auth').hide()
