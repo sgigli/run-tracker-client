@@ -44,7 +44,6 @@ const onChangePassword = event => {
 
 const onShowChangePW = (event) => {
   event.preventDefault()
-  console.log('check')
 
   // $('#change-password').removeClass('hide')
   // $('#change-password').show()

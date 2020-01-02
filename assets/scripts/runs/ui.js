@@ -12,7 +12,6 @@ const createRunSuccess = () => {
 }
 
 const getRunsSuccess = data => {
-  console.log(data)
   const showRunsHtml = showRunsTemplate({runs: data.runs})
   // $('#myChart2').empty()
   $('#message').empty()
@@ -21,7 +20,6 @@ const getRunsSuccess = data => {
 }
 
 const getRunSuccess = data => {
-  console.log(data)
   const showRunHtml = showRunTemplate({run: data.run})
   $('#message').empty()
   $('form').trigger('reset')

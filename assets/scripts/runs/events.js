@@ -10,7 +10,7 @@ const onGetRuns = function (event) {
 
   runsApi.index()
     .then(runsUi.getRunsSuccess)
-    .catch(console.error)
+    .catch()
 }
 
 const onDeleteRun = function (event) {
@@ -20,7 +20,7 @@ const onDeleteRun = function (event) {
     .then(function (data) {
       onGetRuns(event)
     })
-    .catch(console.error)
+    .catch()
 }
 
 const onUpdateRun = function (event) {
@@ -28,27 +28,30 @@ const onUpdateRun = function (event) {
 
   const data = getFormFields(event.target)
   const id = $(event.target).data('id')
-  console.log(data)
   runsApi.update(data, id)
     .then(function () {
       onGetRuns(event)
     })
-    .catch(console.error)
+    .catch()
 }
 
 const onCreateRun = function (event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
-  runsApi.create(data)
-    .then(runsUi.createRunSuccess)
-    .catch(console.error)
+  const run = data.run
+  if (!run.date || !run.distance || !run.run_time || !run.place) {
+    $('#message').html('Be sure to fill out all fields!')
+  } else {
+    runsApi.create(data)
+      .then(runsUi.createRunSuccess)
+      .catch()
+  }
 }
 
 const onGetChart = (event) => {
   runsApi.index()
     .then(runsUi.drawChart)
-  // console.log(data.runs)
 }
 
 const onGetRun = (event) => {
@@ -59,30 +62,23 @@ const onGetRun = (event) => {
 
   runsApi.index()
     .then(function (res) {
-      console.log(res.runs)
       const run = res.runs.find(ele => ele.date === date)
-      console.log(run)
       const id = run.id
-      console.log(id)
       runsApi.show(id)
         .then(runsUi.getRunSuccess)
     })
-    .catch(console.error)
+    .catch()
 }
 
 const onShowUpdateFields = (event) => {
   event.preventDefault()
   const id = $(event.target).parents('.edit-button').data('id')
-  console.log(id)
   runsUi.showUpdateFields(id)
 }
 
 const onShowSettings = (event) => {
   event.preventDefault()
   $('.after-settings-click').toggle()
-
-  // $('#enclose').addClass('white-background')
-  // $('.after-settings-click').addClass('white-background')
 }
 
 const addHandlers = () => {
