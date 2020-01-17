@@ -13,11 +13,17 @@ const createRunSuccess = () => {
 
 const getRunsSuccess = data => {
   const showRunsHtml = showRunsTemplate({runs: data.runs})
-  // $('#myChart2').empty()
   $('#message').empty()
   $('#output').html(showRunsHtml)
   eva.replace()
 }
+
+// const getAllRunsSuccess = data => {
+//   const showRunsHtml = showRunsTemplate({runs: data.runs})
+//   $('#message').empty()
+//   $('#output').html(showRunsHtml)
+//   eva.replace()
+// }
 
 const getRunSuccess = data => {
   const showRunHtml = showRunTemplate({run: data.run})
