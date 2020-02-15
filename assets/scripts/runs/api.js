@@ -3,9 +3,19 @@
 const config = require('../config')
 const store = require('../store')
 
-const index = () => {
+const indexIndividual = () => {
   return $.ajax({
-    url: config.apiUrl + '/runs',
+    url: config.apiUrl + '/runs' + '?individual=true',
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
+
+const indexAll = () => {
+  return $.ajax({
+    url: config.apiUrl + '/runs' + '?individual=false',
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`
@@ -56,7 +66,8 @@ const show = (id) => {
 }
 
 module.exports = {
-  index,
+  indexIndividual,
+  indexAll,
   create,
   update,
   destroy,

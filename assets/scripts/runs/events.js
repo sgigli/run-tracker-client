@@ -8,9 +8,18 @@ const runsUi = require('./ui.js')
 const onGetRuns = function (event) {
   event.preventDefault()
 
-  runsApi.index()
+  runsApi.indexIndividual()
     .then(runsUi.getRunsSuccess)
     .catch()
+}
+
+const onGetAllRuns = function (event) {
+  event.preventDefault()
+  console.log('test')
+
+  runsApi.indexAll()
+    .then(runsUi.getRunsSuccess)
+    .catch(console.error)
 }
 
 const onDeleteRun = function (event) {
@@ -50,7 +59,7 @@ const onCreateRun = function (event) {
 }
 
 const onGetChart = (event) => {
-  runsApi.index()
+  runsApi.indexIndividual()
     .then(runsUi.drawChart)
 }
 
@@ -60,7 +69,7 @@ const onGetRun = (event) => {
   const data = getFormFields(event.target)
   const date = data.run.date
 
-  runsApi.index()
+  runsApi.indexIndividual()
     .then(function (res) {
       const run = res.runs.find(ele => ele.date === date)
       const id = run.id
@@ -90,6 +99,7 @@ const addHandlers = () => {
   $('.chart').on('click', onGetChart)
   $('.get-run').on('submit', onGetRun)
   $('.before-settings-click').on('click', onShowSettings)
+  $('.all-local-runs').on('click', onGetAllRuns)
 }
 
 module.exports = {
