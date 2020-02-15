@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Run Tracker</title>
+  <title>rUnwind</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -51,15 +51,38 @@
         <h4 id="message"></h4>
       </div>
       <div id='title' class="col-6">
-        <h1>Run Tracker</h1>
+        <h1>rUnwind</h1>
       </div>
     </div>
     <div class="row">
       <div class="buffer2"></div>
     </div>
   </div>
-  <section class='before-auth'>
+  <div class="container before-auth">
+    <div class="row">
+      <div class="col-3">
+        <section class='before-auth-inner'>
+          <button id='demo' class="btn btn-primary">DEMO</button>
+          <form id="sign-up">
+            <input name="credentials[email]" type="text" placeholder="email">
+            <input name="credentials[password]" type="password" placeholder="password">
+            <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+            <button class="btn btn-primary">Sign Up</button>
+          </form>
+          <form id="sign-in">
+            <input name="credentials[email]" type="text" placeholder="email">
+            <input name="credentials[password]" type="password" placeholder="password">
+            <button class="btn btn-primary">Sign In</button>
+          </form>
+        </section>
+      </div>
+      <div class="col-9">
+      </div>
+    </div>
+  </div>
+  <!-- <section class='before-auth'>
     <section class='before-auth-inner'>
+      <button id='demo' class="btn btn-primary">DEMO</button>
       <form id="sign-up">
         <input name="credentials[email]" type="text" placeholder="email">
         <input name="credentials[password]" type="password" placeholder="password">
@@ -72,7 +95,7 @@
         <button class="btn btn-primary">Sign In</button>
       </form>
     </section>
-  </section>
+  </section> -->
   <section class='after-auth'>
     <div class="container">
       <div class="row">

@@ -45,10 +45,15 @@ const onChangePassword = event => {
 const onShowChangePW = (event) => {
   event.preventDefault()
 
-  // $('#change-password').removeClass('hide')
-  // $('#change-password').show()
   $('.hide').show()
   $('.show-change-PW').hide()
+}
+
+const onDemo = event => {
+  console.log('test')
+  api.demoSignIn()
+    .then(ui.onSignInSuccess)
+    .catch(ui.onSignInFailure)
 }
 
 const addHandlers = () => {
@@ -57,6 +62,7 @@ const addHandlers = () => {
   $('#sign-out').on('click', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('.show-change-PW').on('click', onShowChangePW)
+  $('#demo').on('click', onDemo)
 }
 
 module.exports = {
