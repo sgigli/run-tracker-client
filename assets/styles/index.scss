@@ -1,10 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  // margin-top: 40px;
   text-align: center;
-  // background-color: #cce6ff;
-  background-image: url('https://hikeoftheweek.com/new/wp-content/uploads/2012/09/DSC03319.jpg')
+}
+
+.background-image {
+  margin-top: -10px;
+  height: 90vw;
+  background: url('https://images.unsplash.com/photo-1568226292321-dd67ff8b3b2b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bW91bnRhaW4lMjB0cmFpbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80');
+  background-size: cover;
 }
 
 .before-auth {

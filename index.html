@@ -16,126 +16,128 @@
 </head>
 
 <body>
-  <nav>
-    <section class='before-auth'>
-      <div class='before-auth-top'>
-        ---
-      </div>
-    </section>
-    <section class='after-auth'>
-      <div id='enclose'>
-        <section class="inline-block">
-          <section class="after-settings-click">
-            <form id="change-password">
-              <section class='hide'>
-                <input type="password" name="passwords[old]" placeholder="old password">
-                <input type="password" name="passwords[new]" placeholder="new password">
-                <button class="btn btn-primary">Submit</button>
-              </section>
-            </form>
-            <button class="btn btn-primary show-change-PW">Change Password</button>
-            <button id='sign-out' class="btn btn-danger sign-out">Sign Out</button>
+  <div class="background-image">
+    <nav>
+      <section class='before-auth'>
+        <div class='before-auth-top'>
+          ---
+        </div>
+      </section>
+      <section class='after-auth'>
+        <div id='enclose'>
+          <section class="inline-block">
+            <section class="after-settings-click">
+              <form id="change-password">
+                <section class='hide'>
+                  <input type="password" name="passwords[old]" placeholder="old password">
+                  <input type="password" name="passwords[new]" placeholder="new password">
+                  <button class="btn btn-primary">Submit</button>
+                </section>
+              </form>
+              <button class="btn btn-primary show-change-PW">Change Password</button>
+              <button id='sign-out' class="btn btn-danger sign-out">Sign Out</button>
+            </section>
           </section>
-        </section>
-        <i data-eva="settings-outline" class='before-settings-click white-background'></i>
-      </div>
-    </section>
+          <i data-eva="settings-outline" class='before-settings-click white-background'></i>
+        </div>
+      </section>
 
-  </nav>
+    </nav>
 
-  <div class="container">
-    <div class="row">
-    </div>
-    <div class="row row-no-gutters">
-      <div class="col-4 text-left">
-        <h4 id="message"></h4>
-      </div>
-      <div id='title' class="col-6">
-        <h1>rUnwind</h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="buffer2"></div>
-    </div>
-  </div>
-  <div class="container before-auth">
-    <div class="row">
-      <div class="col-3">
-        <section class='before-auth-inner'>
-          <button id='demo' class="btn btn-primary">DEMO</button>
-          <form id="sign-up">
-            <input name="credentials[email]" type="text" placeholder="email">
-            <input name="credentials[password]" type="password" placeholder="password">
-            <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
-            <button class="btn btn-primary">Sign Up</button>
-          </form>
-          <form id="sign-in">
-            <input name="credentials[email]" type="text" placeholder="email">
-            <input name="credentials[password]" type="password" placeholder="password">
-            <button class="btn btn-primary">Sign In</button>
-          </form>
-        </section>
-      </div>
-      <div class="col-9">
-      </div>
-    </div>
-  </div>
-  <!-- <section class='before-auth'>
-    <section class='before-auth-inner'>
-      <button id='demo' class="btn btn-primary">DEMO</button>
-      <form id="sign-up">
-        <input name="credentials[email]" type="text" placeholder="email">
-        <input name="credentials[password]" type="password" placeholder="password">
-        <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
-        <button class="btn btn-primary">Sign Up</button>
-      </form>
-      <form id="sign-in">
-        <input name="credentials[email]" type="text" placeholder="email">
-        <input name="credentials[password]" type="password" placeholder="password">
-        <button class="btn btn-primary">Sign In</button>
-      </form>
-    </section>
-  </section> -->
-  <section class='after-auth'>
     <div class="container">
       <div class="row">
       </div>
-
+      <div class="row row-no-gutters">
+        <div class="col-4 text-left">
+          <h4 id="message"></h4>
+        </div>
+        <div id='title' class="col-6">
+          <h1>rUnwind</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="buffer2"></div>
+      </div>
+    </div>
+    <div class="container before-auth">
       <div class="row">
         <div class="col-3">
-          <section class='box'>
-            <form class='create-run'>
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary create-run-button">Log Run</button>
-                <input type="date" name="run[date]" placeholder="Date">
-                <input type="text" name="run[distance]" placeholder="Distance">
-                <section id='block'>
-                  <input type="text" name="run[run_time]" placeholder="Time">
-                  <input type="text" name="run[place]" placeholder="Place">
-                </section>
-              </div>
+          <section class='before-auth-inner'>
+            <button id='demo' class="btn btn-primary">DEMO</button>
+            <form id="sign-up">
+              <input name="credentials[email]" type="text" placeholder="email">
+              <input name="credentials[password]" type="password" placeholder="password">
+              <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+              <button class="btn btn-primary">Sign Up</button>
             </form>
-
-            <form class='get-runs'>
-              <button type="submit" class="btn btn-primary">See Your Runs</button>
+            <form id="sign-in">
+              <input name="credentials[email]" type="text" placeholder="email">
+              <input name="credentials[password]" type="password" placeholder="password">
+              <button class="btn btn-primary">Sign In</button>
             </form>
-
-            <button type="submit" class="btn btn-primary all-local-runs">See Local Runs</button>
-
-            <form class='get-run'>
-              <button type="submit" class="btn btn-primary">Search</button>
-              <input type="text" name="run[date]" placeholder="Date">
-            </form>
-
-            <button class="chart btn btn-primary">See Chart</button>
           </section>
         </div>
         <div class="col-9">
-          <div id="output"></div>
         </div>
       </div>
     </div>
-  </section>
+    <!-- <section class='before-auth'>
+      <section class='before-auth-inner'>
+        <button id='demo' class="btn btn-primary">DEMO</button>
+        <form id="sign-up">
+          <input name="credentials[email]" type="text" placeholder="email">
+          <input name="credentials[password]" type="password" placeholder="password">
+          <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+          <button class="btn btn-primary">Sign Up</button>
+        </form>
+        <form id="sign-in">
+          <input name="credentials[email]" type="text" placeholder="email">
+          <input name="credentials[password]" type="password" placeholder="password">
+          <button class="btn btn-primary">Sign In</button>
+        </form>
+      </section>
+    </section> -->
+    <section class='after-auth'>
+      <div class="container">
+        <div class="row">
+        </div>
+
+        <div class="row">
+          <div class="col-3">
+            <section class='box'>
+              <form class='create-run'>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary create-run-button">Log Run</button>
+                  <input type="date" name="run[date]" placeholder="Date">
+                  <input type="text" name="run[distance]" placeholder="Distance">
+                  <section id='block'>
+                    <input type="text" name="run[run_time]" placeholder="Time">
+                    <input type="text" name="run[place]" placeholder="Place">
+                  </section>
+                </div>
+              </form>
+
+              <form class='get-runs'>
+                <button type="submit" class="btn btn-primary">See Your Runs</button>
+              </form>
+
+              <button type="submit" class="btn btn-primary all-local-runs">See Local Runs</button>
+
+              <form class='get-run'>
+                <button type="submit" class="btn btn-primary">Search</button>
+                <input type="text" name="run[date]" placeholder="Date">
+              </form>
+
+              <button class="chart btn btn-primary">See Chart</button>
+            </section>
+          </div>
+          <div class="col-9">
+            <div id="output"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
   <script>
     eva.replace()
   </script>
